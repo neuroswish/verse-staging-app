@@ -64,7 +64,9 @@ export const Web3ConfigProvider = ({
     // we use this value and set it to the state, and we also can use the setState function to change this value up the prop tree
 
     // within this wrapping we have our web3 react provider with its necessary config
-    // within this we have our web 3 react manager
+    // within this we have our web 3 react manager, which manages connection changes
+
+    // within this, we have our connect wallet modal 
     <WalletModalOpenContext.Provider
       value={{ openModalName, setOpenModalName }}
     >
