@@ -67,6 +67,7 @@ export const Web3ConfigProvider = ({
     // within this we have our web 3 react manager, which manages connection changes
 
     // within this, we have our connect wallet modal 
+    // ConnectWalletModal reads from ModalActionLayout, which reads from useWalletModalState, which reads from WalletModalOpenContext, which is the top level component here
     <WalletModalOpenContext.Provider
       value={{ openModalName, setOpenModalName }}
     >
