@@ -4,19 +4,40 @@ import * as React from "react";
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import {
-  useWalletButton,
-  useWeb3Wallet,
-} from "@zoralabs/simple-wallet-provider";
-import { Fragment, useContext } from "react";
-import ConnectWallet from "../components/ConnectWallet"
+
+// wallet imports
+import { useWalletButton } from '../wallets/hooks/useWalletButton'
+import { useWeb3Wallet } from '../wallets/hooks/useWeb3Wallets'
 
 /**
  * Returns home page
  * @returns {ReactElement}
  */
 
-export default function Home(): ReactElement {
+const ConnectWallet = () => {
+  const { buttonAction, actionText, connectedInfo } = useWalletButton();
+
+  return (
+    <div>
+      <h1>{`${
+        connectedInfo === undefined
+          ? "To List your Loot Connect your wallet!"
+          : connectedInfo
+      }`}</h1>
+      <button className="button" onClick={() => buttonAction()}>
+        {actionText}
+      </button>
+    </div>
+  );
+};
+
+export default function Home() {
+  const { active, account } = useWeb3Wallet();
+  return (
+    <main>
+          <ConnectWallet />
+    </main>
+  );
   return (
     <div className={styles.container}>
       <Head>
@@ -29,7 +50,7 @@ export default function Home(): ReactElement {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
-        <ConnectWallet />
+      
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>

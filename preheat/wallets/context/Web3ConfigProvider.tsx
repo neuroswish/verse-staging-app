@@ -60,14 +60,15 @@ export const Web3ConfigProvider = ({
   const getLibrary = useMemo(() => getLibraryByNetwork(networkId), [networkId]);
 
   return (
-    // return the modal open context provider value so we know the prop value of the modal opening
-    // we use this value and set it to the state, and we also can use the setState function to change this value up the prop tree
+    // return the modal open context provider value so we know the modal opening state
+    // the values passed in are available to all the downtree components
 
-    // within this wrapping we have our web3 react provider with its necessary config
-    // within this we have our web 3 react manager, which manages connection changes
+    // within this wrapping we have our Web3ReactProvider with its necessary config; basically wraps components with ethers.js
+    // within this wrapping we have our Web3ConfigurationContext, which is really our global web3 context dependent on the ethers.js library
+    // within this we have our Web3ReactManager, which manages connection changes
 
     // within this, we have our connect wallet modal 
-    // ConnectWalletModal reads from ModalActionLayout, which reads from useWalletModalState, which reads from WalletModalOpenContext, which is the top level component here
+    // ConnectWalletModal reads from ModalActionLayout, which reads from useWalletModalState, which uses the context from WalletModalOpenContext, which is the top level component
     <WalletModalOpenContext.Provider
       value={{ openModalName, setOpenModalName }}
     >
