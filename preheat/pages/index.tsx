@@ -21,7 +21,7 @@ const ConnectWallet = () => {
     <div>
       <h1>{`${
         connectedInfo === undefined
-          ? "To List your Loot Connect your wallet!"
+          ? "Jump into a new Verse"
           : connectedInfo
       }`}</h1>
       <button className="button" onClick={() => buttonAction()}>
@@ -35,7 +35,7 @@ export default function Home() {
   const { active, account } = useWeb3Wallet();
   return (
     <main>
-          <ConnectWallet />
+        <ConnectWallet />
     </main>
   );
   return (
