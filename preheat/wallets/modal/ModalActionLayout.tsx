@@ -31,7 +31,7 @@ export const ModalActionLayout = ({
     <ModalOverlay modalName={modalName} canClose>
       {account || modalWalletOpen ? (
         <ModalContent title={modalTitle} ariaLabel={modalDescription}>
-          <div {...getStyles("modalText")}>
+          <div className="pointer-events-auto p-5 bg-white rounded-lg">
             {children}
             {error && (
               <p className="error">

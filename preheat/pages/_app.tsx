@@ -15,7 +15,7 @@ export default function CreateVerseApp({ Component, pageProps }: AppProps) {
         rpcUrl = {process.env.NEXT_PUBLIC_RPC_ENDPOINT as string || undefined}
         theme={{
           walletOption: css`
-            color: #000 !important;
+            color: #000000 !important;
             position: relative;
             width: 100%;
             padding: 20px;

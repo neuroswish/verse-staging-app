@@ -19,7 +19,7 @@ export const useWalletButton = () => {
       active ? deactivate() : openWallet();
     },
     connectedInfo: active
-      ? `${getString("CONNECTED_BUTTON_TEXT")} ${addressShortened}`
+      ? `${addressShortened}`
       : undefined,
     account: account
       ? {

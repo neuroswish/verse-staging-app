@@ -5,37 +5,22 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-// wallet imports
+// wallet imports - useWeb3React gets global active context
 import { useWalletButton } from '../wallets/hooks/useWalletButton'
 import { useWeb3Wallet } from '../wallets/hooks/useWeb3Wallets'
+
+import Header from '../components/Header'
 
 /**
  * Returns home page
  * @returns {ReactElement}
  */
 
-const ConnectWallet = () => {
-  const { buttonAction, actionText, connectedInfo } = useWalletButton();
-
-  return (
-    <div>
-      <h1>{`${
-        connectedInfo === undefined
-          ? "Jump into a new Verse"
-          : connectedInfo
-      }`}</h1>
-      <button className="button" onClick={() => buttonAction()}>
-        {actionText}
-      </button>
-    </div>
-  );
-};
-
 export default function Home() {
   const { active, account } = useWeb3Wallet();
   return (
     <main>
-        <ConnectWallet />
+        <Header />
     </main>
   );
   return (
