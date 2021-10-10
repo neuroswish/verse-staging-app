@@ -19,7 +19,7 @@ import Header from '../components/Header'
 export default function Home() {
   const { active, account } = useWeb3Wallet();
   return (
-    <main>
+    <main className="bg-backgroundLightAlternate min-h-screen w-full bg-contain relative">
         <Header />
     </main>
   );

@@ -112,6 +112,9 @@ export const WalletOptions: React.FC = () => {
 
   return (
     <div {...getStyles("walletOptionsList")}>
+      <h2>
+        Connect Wallet
+      </h2>
       {renderWalletOptions}
       {error && (
         <div {...getStyles("walletError")}>

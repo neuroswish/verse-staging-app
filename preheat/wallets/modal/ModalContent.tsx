@@ -24,7 +24,7 @@ export const ModalContent = ({
     <DialogContent
       aria-label={ariaLabel}
       title={title}
-      className="w-10 pointer-events-none flex flex-auto flex-col justify-center items-center p-0 overflow-x-hidden"
+      className="px-4 py-5 max-h-full w-full flex bg-white px-8 md:px-28 pt-12 pb-8 w-full max-w-lg md:rounded-2xl shadow-lg focus:outline-none hover:outline-none"
     >
       {children}
     </DialogContent>

@@ -49,7 +49,7 @@ export const ModalOverlay = ({
   });
 
   return openModalName === modalName ? (
-    <DialogOverlay onDismiss={handleOnDismiss} className="fixed top-0 right-0 bottom-0 left-0 p-0 m-0 z-50 overflow-auto bg-backgroundDim flex text-center">
+    <DialogOverlay onDismiss={handleOnDismiss} className="z-10 fixed w-screen h-full top-0 left-0 flex justify-start items-start pb-36 bg-gray-300 bg-opacity-50 md:items-center md:justify-center md:h-100 md:pb-0">
       {children}
     </DialogOverlay>
   ) : (
