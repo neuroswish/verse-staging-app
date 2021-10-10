@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import styles from '../styles/components/Breadcrumb.module.scss'
 
 interface Props {
   title: String
@@ -6,16 +7,16 @@ interface Props {
 
 }
 
-export default function BreadCrumb({title, lastRoute}: Props) {
+export default function Breadcrumb({title, lastRoute}: Props) {
   return (
-    <div>
+    <div className={styles.breadcrumb}>
       {lastRoute.path && lastRoute.name? (
         <Link href={lastRoute.path}>
-          <a>{`<- ${lastRoute.name}`}</a>
+          <a className={styles.breadcrumb__last}>{`<- ${lastRoute.name}`}</a>
         </Link>
       ): null}
       <h1>{title}</h1>
-      
+
     </div>
   )
 }

@@ -1,9 +1,11 @@
 // General styles for all inputs
 .input__general {
   label {
-    font-weight: 500;
-    font-size: 16px;
-    color: #24262d;
+    font-weight: 600;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+    text-transform: uppercase;
+    margin-bottom: 10px;
   }
 
   textarea {
@@ -12,11 +14,12 @@
 
   input[type="text"],
   input[type="number"],
-  textarea {
+  input {
     font-family: "Inter", sans-serif;
     color: #24262d;
-    border: 1px solid #e3e4e6;
-    border-radius: 8px;
+    //border: 1px solid #e3e4e6;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
     font-size: 16px;
     line-height: 22px;
     padding: 16px 20px;
@@ -25,7 +28,7 @@
 
   input[type="text"]:focus,
   input[type="number"]:focus,
-  textarea:focus {
+  input:focus {
     outline: none;
     border-color: var(--color-pink);
   }
@@ -41,14 +44,16 @@
 .input__text {
   label {
     line-height: 20px;
-    padding-bottom: 12px;
+    padding-bottom: 0px;
+    //margin-bottom: 6px;
     display: block;
   }
 
   input[type="text"],
   input[type="number"],
-  textarea {
+  input {
     width: 100%;
+    margin-bottom: 10px;
   }
 }
 

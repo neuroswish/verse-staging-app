@@ -13,7 +13,7 @@ import styles from "../styles/components/Inputs.module.scss"; // Component style
  * @param {string[]} wordList to select from for randomization
  * @returns {ReactElement}
  */
-export function MarketNameInput({
+export function MarketInput({
   title,
   placeholder,
   value,
@@ -27,13 +27,11 @@ export function MarketNameInput({
   return (
     <div className={`${styles.input__general} ${styles.input__text} ${styles.input__textarea}`}>
       <label htmlFor={title}>{title}</label>
-      <TextAreaAutosize
+      <input
         id={title}
         value={value}
-        placeholder={placeholder}
         onChange={(e) => onChangeHandler(e.target.value)}
-        minRows={1}
-        maxRows={4}
+        placeholder={placeholder}
       />
     </div>
   );
@@ -51,10 +49,8 @@ export function MarketSymbolInput({
   onChangeHandler: Function;
 }): ReactElement {
   return (
-    <div>
-      {/* Title label */}
-      <h4 className="text-2xl">{title}</h4>
-      {/* Input field */}
+    <div className={`${styles.input__general} ${styles.input__text} ${styles.input__textarea}`}>
+      <label htmlFor={title}>{title}</label>
       <input
         type="text"
         value={value}

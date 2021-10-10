@@ -6,6 +6,7 @@ import React, { ReactNode } from 'react'
 import type { ReactElement } from "react";
 
 import Header from './Header'
+import styles from "../styles/components/CreateLayout.module.scss"; // Component styles
 
 
 export default function CreateLayout({children}: {children: any}) {
@@ -19,8 +20,9 @@ export default function CreateLayout({children}: {children: any}) {
           showSpinner: false
         }}
       />
-      <div>
-        <div>{children}</div>
+      <Header />
+      <div className={`${styles.layout__content}`}>
+        <div className={`${styles.layout__content_sizer}`}>{children}</div>
       </div>
     </div>
   )

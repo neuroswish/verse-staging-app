@@ -7,8 +7,10 @@ import Image from 'next/image'
 import { GetServerSideProps } from 'next'
 import styles from '../styles/Home.module.css'
 import CreateLayout from '../components/CreateLayout'
+import Card from '../components/Card'
+import Breadcrumb from '../components/Breadcrumb'
 
-import { MarketNameInput, MarketSymbolInput, TokenInput } from "../components/Inputs";
+import { MarketInput, TokenInput } from "../components/Inputs";
 
 // wallet imports - useWeb3React gets global active context
 import { useWalletButton } from '../wallets/hooks/useWalletButton'
@@ -24,24 +26,35 @@ import { useRouter } from 'next/router';
 
 export default function Create() {
   const [marketName, setMarketName] = useState("");
-  const [marketToken, setMarketToken] = useState("");
+  const [marketSymbol, setMarketSymbol] = useState("");
   const [buttonLoading, setButtonLoading] = useState(false);
 
   return (
-    <main className="bg-backgroundLightAlternate min-h-screen w-full bg-contain relative">
-      <Header />
+    <div className="bg-white min-h-screen">
       <CreateLayout>
-      <div className="flex flex-col justify-center items-center">
-        <div className="flex flex-col max-w-3xl w-96 h-72 shadow-createShallow rounded-xl bg-white py-6 px-6">
-          <MarketNameInput
-            title="Market name"
-            placeholder="FlowerParty"
-            value={marketName}
-            onChangeHandler={setMarketName}
-          />
-        </div>
-      </div>
+      <Breadcrumb
+        title="Create a new market"
+        lastRoute={{
+          path: '/',
+          name: "Home"
+        }}
+      />
+          <Card title="Create a new market">
+            <MarketInput
+              title="NAME"
+              placeholder="Enter market name"
+              value={marketName}
+              onChangeHandler={setMarketName}
+            />
+            <MarketInput
+              title="SYMBOL"
+              placeholder="Enter market symbol"
+              value={marketSymbol}
+              onChangeHandler={setMarketSymbol}
+            />
+            <button className="px-8 py-2 bg-black rounded-md font-semibold text-white">Next</button>
+          </Card>
       </CreateLayout>
-    </main>
+    </div>
   );
 }
